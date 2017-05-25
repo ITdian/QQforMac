@@ -14,8 +14,12 @@ $(function () {
         $('section').eq(index).show().siblings("section").hide();
         /*调用隐藏和显示部件的方法*/
         showAndHideEle();
-    });
+        /*移除架空类*/
+        setTimeout(function () {
+            $('section').eq(index).removeClass('curr').siblings('section').addClass('curr');
+        },10);
 
+    });
 
     /*监听鼠标的滚动*/
     // $(window).on('scroll',function () {
@@ -43,7 +47,12 @@ $(function () {
             $('.gps li').eq(index).addClass('current').siblings().removeClass('current');
             $('section').eq(index).show().siblings("section").hide();
             showAndHideEle();
+            /*移除架空类*/
+            setTimeout(function () {
+                $('section').eq(index).removeClass('curr').siblings('section').addClass('curr');
+            },10);
         },400);
+
 
     });
     

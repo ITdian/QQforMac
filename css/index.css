@@ -129,7 +129,9 @@ section.p5{
 
 /*第一屏幕*/
 .p1{
-
+    /*透视*/
+    perspective:1500px;
+    -webkit-perspective:1500px; /* Safari and Chrome */
 }
 .p1 .p1_title{
     width: 550px;
@@ -232,4 +234,109 @@ section.p5{
     100%{
         transform:translateX(0) translateY(0) translateZ(0) rotateX(65deg) rotateY(-10deg) rotateZ(360deg) scaleX(1.5) scaleY(1.5) scaleZ(1);
     }
+}
+
+
+
+/*p2*/
+.p2{
+    /*透视*/
+    perspective: 1200px;
+}
+.p2 .p2_bg span{
+    width: 6000px;
+    height: 1px;
+    background-color: #c7e00e;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -3000px;
+    transform: translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(-45deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+}
+.p2 .p2_bg img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.p2 .p2_bg img:nth-of-type(1){
+    width: 684px;
+    height: 395px;
+    margin-left: 32px;
+    margin-top: -197px;
+}
+.p2 .p2_bg img:nth-of-type(2){
+    width: 346px;
+    height: 123px;
+    margin-left: 172px;
+    margin-top: -62px;
+}
+.p2 .p2_content{
+    /*过渡效果*/
+    transition: all 1s linear;
+}
+.p2 .p2_content,.p2 .p2_content ul{
+    width: 900px;
+    height: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -450px;
+    margin-top: -300px;
+}
+.p2 .p2_content ul li{
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -175px;
+    margin-top: -175px;
+}
+/*.p2 .p2_content ul li img{
+    animation: p2Round 2s infinite linear;
+}*/
+@keyframes  p2Round{
+        0%{
+            transform: translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(1) scaleY(1) scaleZ(1);
+        }
+    100%{
+        transform: translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(360deg) scaleX(1) scaleY(1) scaleZ(1);
+    }
+}
+.p2 .p2_content ul li:nth-of-type(1){
+    margin-left: 10%;
+    animation: p2Round 0.8s infinite linear;
+}
+.p2 .p2_content ul li:nth-of-type(2){
+    margin-left: 0;
+    animation: p2Round 1.5s infinite linear;
+}
+.p2 .p2_content ul li:nth-of-type(3){
+    margin-left: -10%;
+    animation: p2Round 2s infinite linear;
+}
+.p2 .p2_content ul li:nth-of-type(4){
+    margin-left: -20%;
+    animation: p2Round 2s infinite linear;
+}
+.p2 .p2_title{
+    width: 360px;
+    height: 160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -49px;
+    margin-left:-430px;
+    /*过渡效果*/
+    transition: all 1s linear;
+}
+.p2 .p2_title p{
+    color: #ffffff;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/*架空类*/
+.p2.curr .p2_content,.p2_content.curr .p2_title{
+    transform: translateX(0px) translateY(0) translateZ(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scaleX(3) scaleY(3) scaleZ(3);
 }
